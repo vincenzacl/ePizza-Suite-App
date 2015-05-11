@@ -27,6 +27,8 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>DEMO</title>
         <script type="text/javascript">
+            document.addEventListener("deviceready", onDeviceReady, false);
+        
             function checkConnection() {
                var networkState = navigator.network.connection.type;
                var states = {};
@@ -48,10 +50,13 @@
                      navigator.notification.alert('This app requires an internet connection');
                 } else {
                     //window.location="http://demo.epizzeria.dk";
-                    window.open("http://demo.epizzeria.dk", "_system");
+                    //window.open("http://demo.epizzeria.dk", "_system");
+                    // external url
+                    var ref = window.open(encodeURI('http://demo.epizzeria.dk'), '_blank', 'location=no');
+                    // relative document
+                    //ref = window.open('next.html', '_self');                    
                 }
             }
-            document.addEventListener("deviceready", onDeviceReady, false); 
         </script>
         
     </head>
