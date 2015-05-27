@@ -34,6 +34,12 @@
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
         
         <script type="text/javascript">
+		function fixiFrame () {
+		   if ((android) && (androidVersion > 3)) {
+		      iFrameContentHeight = document.getElementById('body_content').contentDocument.body.offsetHeight;
+		      document.getElementById('body_content').style.height = iFrameContentHeight + 'px';
+		   }
+		}        
             function checkConnection() {
                var networkState = navigator.network.connection.type;
                var states = {};
@@ -78,7 +84,7 @@
 	    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%;">
 	    	<tr>
 	    		<td id="content" valign="top">
-		       		<iframe name="body_content" id="body_content" src="http://demo.epizzeria.dk" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; height: 100%; width: 100%;"></iframe>
+		       		<iframe name="body_content" id="body_content" src="http://demo.epizzeria.dk" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; height: 100%; width: 100%;" onLoad='fixiFrame();'></iframe>
 	        	</td>
 	    	</tr>
 	    </table>
