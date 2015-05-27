@@ -65,19 +65,23 @@
             }
     		function onLoad() {
     			document.addEventListener("deviceready", onDeviceReady, false);
-    			document.addEventListener("pause", onPause, false);
-    			document.addEventListener("resume", onResume, false);
-    			document.addEventListener("menubutton", onMenuKeyDown, false);
-			document.addEventListener("offline", this.onOffline, false);
-			document.addEventListener("online", this.onOnline, false);    			
+    			//document.addEventListener("pause", onPause, false);
+    			//document.addEventListener("resume", onResume, false);
+    			//document.addEventListener("menubutton", onMenuKeyDown, false);
+			//document.addEventListener("offline", this.onOffline, false);
+			//document.addEventListener("online", this.onOnline, false);    			
     		}
         </script>
     </head>
     <body onload="onLoad()">
-        <div id="content" style="height: auto; width: auto; overflow: auto; -webkit-overflow-scrolling:touch;">
-                <div style="text-align:center;padding-top:50%">
-                    <span id="status">Vent venligst...</span>
-                </div>
-        </div>
+    <div id="page">
+	    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%;">
+	    	<tr>
+	    		<td id="content" valign="top">
+		       		<iframe name="body_content" id="body_content" src="http://demo.epizzeria.dk" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; height: 100%; width: 100%;"></iframe>
+	        	</td>
+	    	</tr>
+	    </table>
+    </div>    	
     </body>
 </html>
