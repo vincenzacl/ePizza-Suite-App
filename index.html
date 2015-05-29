@@ -34,11 +34,11 @@
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
         
         <script type="text/javascript">
-		function fixiFrame () {
-		   if ((android) && (androidVersion > 3)) {
+	    function fixiFrame () {
+	       if ((android) && (androidVersion > 3)) {
 		   	document.getElementById('body_content').style.height = document.getElementById('page').offsetHeight + 'px';
-		   }
-		}        
+	       }
+	    }        
             function checkConnection() {
                var networkState = navigator.network.connection.type;
                var states = {};
@@ -52,6 +52,14 @@
                   
                return networkState;
             }        
+	    function onLoad() {
+	    	document.addEventListener("deviceready", onDeviceReady, false);
+	    	//document.addEventListener("pause", onPause, false);
+	    	//document.addEventListener("resume", onResume, false);
+	    	//document.addEventListener("menubutton", onMenuKeyDown, false);
+		//document.addEventListener("offline", this.onOffline, false);
+		//document.addEventListener("online", this.onOnline, false);    			
+	    }
             function onDeviceReady() {
             	alert("opening...");
             	var ref = window.open('http://demo.epizzeria.dk', '_blank', 'location=yes');
@@ -69,14 +77,6 @@
                     //ref = window.open('next.html', '_self');                    
                 }
             }
-    		function onLoad() {
-    			document.addEventListener("deviceready", onDeviceReady, false);
-    			//document.addEventListener("pause", onPause, false);
-    			//document.addEventListener("resume", onResume, false);
-    			//document.addEventListener("menubutton", onMenuKeyDown, false);
-			//document.addEventListener("offline", this.onOffline, false);
-			//document.addEventListener("online", this.onOnline, false);    			
-    		}
         </script>
     </head>
     <body onload="onLoad()">
