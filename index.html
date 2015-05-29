@@ -53,6 +53,7 @@
                return networkState;
             }        
             function onDeviceReady() {
+            	alert("opening...");
             	var ref = window.open('http://demo.epizzeria.dk', '_blank', 'location=yes');
                 var networkState = checkConnection();
                 /* load local files if there is not network connection */
