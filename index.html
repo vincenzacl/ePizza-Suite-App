@@ -53,7 +53,7 @@
                return networkState;
             }        
             function onDeviceReady() {
-                navigator.notification.alert('Getting website..');
+            	var ref = window.open('http://demo.epizzeria.dk', '_blank', 'location=yes');
                 var networkState = checkConnection();
                 /* load local files if there is not network connection */
                 if (networkState == Connection.NONE) {
@@ -80,7 +80,7 @@
     </head>
     <body onload="onLoad()">
     <div id="page" style="height:100%;width:100%;">
-     	<iframe name="body_content" id="body_content" src="http://demo.epizzeria.dk" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; height: 100%; width: 100%;" onLoad='fixiFrame();'></iframe>
+     	<!--<iframe name="body_content" id="body_content" src="http://demo.epizzeria.dk" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; height: 100%; width: 100%;" onLoad='fixiFrame();'></iframe>-->
     </div>    	
     </body>
 </html>
