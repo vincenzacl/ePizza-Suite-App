@@ -25,7 +25,7 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>DEMO</title>
+        <title>ePizza Suite App</title>
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -61,18 +61,15 @@
 		//document.addEventListener("online", this.onOnline, false);    			
 	    }
             function onDeviceReady() {
-            	alert("opening...");
-            	var ref = window.open('http://demo.epizzeria.dk', '_blank', 'location=yes');
+            	//var ref = window.open('http://demo.epizzeria.dk', '_blank', 'location=no');
                 var networkState = checkConnection();
                 /* load local files if there is not network connection */
                 if (networkState == Connection.NONE) {
-                     navigator.notification.alert('This app requires an internet connection');
+                     navigator.notification.alert('Du har ingen internet forbindelse.');
                 } else {
-                    //window.location="http://demo.epizzeria.dk";
-                    //window.open("http://demo.epizzeria.dk", "_system");
                     // external url
-                    navigator.notification.alert('Opening website');
-                    var ref = window.open('http://demo.epizzeria.dk', '_self', 'location=yes');
+                    //navigator.notification.alert('Opening website');
+                    var ref = window.open('http://m.pizza-pronto.dk', '_self', 'location=no');
                     // relative document
                     //ref = window.open('next.html', '_self');                    
                 }
@@ -81,6 +78,7 @@
     </head>
     <body onload="onLoad()">
     	<div id="page" style="height:100%;width:100%;">
+    		Vent venligst...	
      		<!--<iframe name="body_content" id="body_content" src="http://demo.epizzeria.dk" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; height: 100%; width: 100%;" onLoad='fixiFrame();'></iframe>-->
     	</div>    	
     </body>
