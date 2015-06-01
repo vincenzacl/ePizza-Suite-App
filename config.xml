@@ -28,6 +28,14 @@
         <param name="ios-package" value="CDVSplashScreen" />
     </feature>
     
+    <platform name="android">
+        <preference name="Fullscreen" value="false" />
+    </platform>
+    <platform name="ios">
+        <preference name="StatusBarOverlaysWebView" value="false" />            
+        <preference name="Fullscreen" value="false" />
+    </platform>    
+    
     <!--
         If you do not want any permissions to be added to your app, add the
         following tag to your config.xml; you will still have the INTERNET
@@ -35,31 +43,34 @@
     -->
     <preference name="permissions"                value="none"/>
 
-    <!-- Customize your app and platform with the preference element. -->
+      <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
     <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
-    <preference name="stay-in-webview"            value="true" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
+    <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
     <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
     <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
     <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
     <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
+    
+    <!-- android -->
     <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
     <preference name="AndroidLaunchMode"          value="singleTask" />
-
-    <!--
-        Define a specific version of PhoneGap to build into your app.
-        <preference name="phonegap-version"       value="3.7.0" />
-        <gap:plugin name="org.transistorsoft.cordova.background-geolocation" version="0.2.0" />
-    -->
+    <preference name="KeepRunning"                value="true"/>
+    <preference name="InAppBrowserStorageEnabled" value="true"/>
+    
+    <preference name="LoadingDialog" value="Pizza Pronto,Velkommen Pizza Pronto"/>
+    <preference name="LoadingPageDialog" value="ePizza Suite Pro,ePizza Suite Pro"/>
+    <preference name="LogLevel" value="WARN"/>
+    
     <gap:config-file platform="android" parent="/manifest/application">
         <activity android:launchMode="singleInstance" />
-    </gap:config-file>        
+    </gap:config-file>       
 
         <!-- Plugins -->
 
@@ -72,16 +83,16 @@
         <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
         <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
         <gap:plugin name="org.apache.cordova.globalization" version="0.3.1" />
-        <!--<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />-->
-        <gap:plugin name="org.li8.inappbrowser" version="0.1" />
+        <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
         <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
         <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
         <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
+        
+        <!-- ios -->
+        <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />        
+        
     <!-- Define app icon for each platform. -->
-
-    
         Define access to external domains.
-
         <access />            - a blank access tag denies access to all external resources.
         <access origin="*" /> - a wildcard access tag allows access to all external resource.
     <!--
@@ -109,5 +120,35 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+
+    <icon src="icons/generic.png" />
+    
+    <!-- iPhone 6 / 6+ -->
+    <icon src="icons/ios/icon-60@3x.png" gap:platform="ios" width="180" height="180" />
+    <!-- iPhone / iPod Touch  -->
+	<icon src="icons/ios/icon-60.png" gap:platform="ios" width="60" height="60" />
+	<icon src="icons/ios/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+	<!-- iPad -->
+	<icon src="icons/ios/icon-76.png" gap:platform="ios" width="76" height="76" />
+	<icon src="icons/ios/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+	<!-- Settings Icon -->
+	<icon src="icons/ios/icon-small.png" gap:platform="ios" width="29" height="29" />
+	<icon src="icons/ios/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+	<!-- Spotlight Icon -->
+	<icon src="icons/ios/icon-40.png" gap:platform="ios" width="40" height="40" />
+	<icon src="icons/ios/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+
+	<!-- iPhone / iPod Touch -->
+	<icon src="icons/ios/icon.png" gap:platform="ios" width="57" height="57" />
+	<icon src="icons/ios/icon@2x.png" gap:platform="ios" width="114" height="114" />
+	<!-- iPad -->
+	<icon src="icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="icons/ios/icon-72@2x.png" gap:platform="ios" width="144" height="144" />
+	<!-- iPhone Spotlight and Settings Icon -->
+	<icon src="icons/ios/icon-small.png" gap:platform="ios" width="29" height="29" />
+	<icon src="icons/ios/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+	<!-- iPad Spotlight and Settings Icon -->
+	<icon src="icons/ios/icon-50.png" gap:platform="ios" width="50" height="50" />
+	<icon src="icons/ios/icon-50@2x.png" gap:platform="ios" width="100" height="100" />
 
 </widget>
