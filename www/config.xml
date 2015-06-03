@@ -7,9 +7,10 @@
         id        = "com.webwapsolutions.epizzaapp"
         version   = "1.0.0">
 
-    <name>ePizza Suite App</name>
+    <name>Pizza Pronto</name>
     <description>
-        ePizza Suite App til din hjemmeside
+        <!--ePizza Suite App til din hjemmeside-->
+		Pizza Pronto App powered by ePizza Suite Pro - leveret af Web Wap Solutions
     </description>
     <author href="http://webwapsolutions.com" email="support@webwapsolutions.com">
         Web Wap Solutions Team
@@ -64,8 +65,8 @@
     <preference name="KeepRunning"                value="true"/>
     <preference name="InAppBrowserStorageEnabled" value="true"/>
     
-    <preference name="LoadingDialog" value="Pizza Pronto,Velkommen Pizza Pronto"/>
-    <preference name="LoadingPageDialog" value="ePizza Suite Pro,ePizza Suite Pro"/>
+    <preference name="LoadingDialog" value="Pizza Pronto, Velkommen Pizza Pronto"/>
+    <preference name="LoadingPageDialog" value="Pizza Pronto, Velkommen Pizza Pronto"/>
     <preference name="LogLevel" value="WARN"/>
     
     <gap:config-file platform="android" parent="/manifest/application">
