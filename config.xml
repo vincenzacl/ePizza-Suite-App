@@ -131,14 +131,20 @@
 	<icon src="icons/android/xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" />
 	<icon src="icons/android/fr-xxhdpi.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />	
 	<!-- splash -->
-	<gap:splash src="icons/android/ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
-	<gap:splash src="icons/android/mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
-	<gap:splash src="icons/android/hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
-	<gap:splash src="icons/android/xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
-	<gap:splash src="icons/android/fr-xhdpi.png" gap:platform="android" gap:qualifier="fr-xhdpi" />
-	<gap:splash src="icons/android/portrait-xxhdpi.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
-	<gap:splash src="icons/android/landscape-xxhdpi.png" gap:platform="android" gap:qualifier="land-xxhdpi" />	
-	
+	<platform name="android">
+	    <!-- you can use any density that exists in the Android project -->
+	    <splash src="icons/android/ldpi.png" density="land-hdpi"/>
+	    <splash src="icons/android/mdpi.png" density="land-ldpi"/>
+	    <splash src="icons/android/mdpi.png" density="land-mdpi"/>
+	    <splash src="icons/android/xhdpi.png" density="land-xhdpi"/>
+	<!-- 		
+	    <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
+	    <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
+	    <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
+	    <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
+	-->
+	</platform>	
+
     <!-- iPhone 6 / 6+ -->
     <icon src="icons/ios/Icon-60@3x.png" gap:platform="ios" width="180" height="180" />
     <!-- iPhone / iPod Touch  -->
@@ -166,21 +172,17 @@
 	<icon src="icons/ios/Icon-50.png" gap:platform="ios" width="50" height="50" />
 	<icon src="icons/ios/Icon-50@2x.png" gap:platform="ios" width="100" height="100" />
 	
-	<!-- splash -->
-	<!-- iPhone and iPod touch -->
-	<gap:splash src="icons/ios/Default.png" gap:platform="ios" width="320" height="480" />
-	<gap:splash src="icons/ios/Default@2x.png" gap:platform="ios" width="640" height="960" />
-	<!-- iPhone 5 / iPod Touch (5th Generation) -->
-	<gap:splash src="icons/ios/Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
-	<!-- iPhone 6 -->
-	<gap:splash src="icons/ios/Default-667h@2x.png" gap:platform="ios" width="750" height="1334" />
-	<gap:splash src="icons/ios/Default-Portrait-736h@3x.png" gap:platform="ios" width="1242" height="2208" />
-	<gap:splash src="icons/ios/Default-Landscape-736h@3x.png" gap:platform="ios" width="2208" height="1242" />
-	<!-- iPad -->
-	<gap:splash src="icons/ios/Default-Portrait.png" gap:platform="ios" width="768" height="1024" />
-	<gap:splash src="icons/ios/Default-Landscape.png" gap:platform="ios" width="1024" height="768" />
-	<!-- Retina iPad -->
-	<gap:splash src="icons/ios/Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2048" />
-	<gap:splash src="icons/ios/Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />	
-
+	<platform name="ios">
+	    <!-- images are determined by width and height. The following are supported -->
+	    <splash src="icons/ios/Default.png" width="320" height="480"/>
+	    <splash src="icons/ios/Default@2x.png" width="640" height="960"/>
+	    <splash src="icons/ios/Default-Portrait.png" width="768" height="1024"/>
+	    <splash src="icons/ios/Default-Portrait@2x.png" width="1536" height="2048"/>
+	    <splash src="icons/ios/Default-Landscape.png" width="1024" height="768"/>
+	    <splash src="icons/ios/Default-Landscape@2x.png" width="2048" height="1536"/>
+	    <splash src="icons/ios/Default-568h@2x.png" width="640" height="1136"/>
+	    <splash src="icons/ios/Default-667h@2x.png" width="750" height="1334"/>
+	    <splash src="icons/ios/Default-Portrait-736h@3x.png" width="1242" height="2208"/>
+	    <splash src="icons/ios/Default-Landscape-736h@3x.png" width="2208" height="1242"/>
+	</platform>
 </widget>
