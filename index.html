@@ -52,14 +52,14 @@
                   
                return networkState;
             }        
-	    function onLoad() {
-	    	document.addEventListener("deviceready", onDeviceReady, false);
-	    	//document.addEventListener("pause", onPause, false);
-	    	//document.addEventListener("resume", onResume, false);
-	    	//document.addEventListener("menubutton", onMenuKeyDown, false);
-		//document.addEventListener("offline", this.onOffline, false);
-		//document.addEventListener("online", this.onOnline, false);    			
-	    }
+		    function onLoad() {
+		    	document.addEventListener("deviceready", onDeviceReady, false);
+		    	//document.addEventListener("pause", onPause, false);
+		    	//document.addEventListener("resume", onResume, false);
+		    	//document.addEventListener("menubutton", onMenuKeyDown, false);
+				//document.addEventListener("offline", this.onOffline, false);
+				//document.addEventListener("online", this.onOnline, false);    			
+		    }
             function onDeviceReady() {
             	//var ref = window.open('http://demo.epizzeria.dk', '_blank', 'location=no');
                 var networkState = checkConnection();
@@ -69,7 +69,7 @@
                 } else {
                     // external url
                     //navigator.notification.alert('Opening website');
-                    var ref = window.open('http://m.pizza-pronto.dk', '_self', 'location=no');
+                    var ref = window.open('http://m.pizza-pronto.dk/?app=1', '_self', 'location=no');
                     // relative document
                     //ref = window.open('next.html', '_self');                    
                 }
