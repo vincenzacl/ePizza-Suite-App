@@ -34,6 +34,39 @@
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
         
         <script type="text/javascript">
+        
+        function initPushwoosh()
+        {
+            var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+         
+            //set push notifications handler
+            document.addEventListener('push-notification', function(event) {
+                var title = event.notification.title;
+                var userData = event.notification.userdata;
+                                         
+                if(typeof(userData) != "undefined") {
+                    console.warn('user data: ' + JSON.stringify(userData));
+                }
+                                             
+                alert(title);
+            });
+         
+            //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_NUMBER", pw_appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
+            pushNotification.onDeviceReady({ projectid: "574851266724", pw_appid : "A1E25-137DC" });
+         
+            //register for pushes
+            pushNotification.registerDevice(
+                function(status) {
+                    var pushToken = status;
+                    console.warn('push token: ' + pushToken);
+                },
+                function(status) {
+                    console.warn(JSON.stringify(['failed to register ', status]));
+                }
+            );
+        }
+        
+        
 	    function fixiFrame () {
 	       if ((android) && (androidVersion > 3)) {
 		   	document.getElementById('body_content').style.height = document.getElementById('page').offsetHeight + 'px';
@@ -62,6 +95,7 @@
 		    }
             function onDeviceReady() {
             	//var ref = window.open('http://demo.epizzeria.dk/?app=1', '_blank', 'location=no');
+            	initPushwoosh();
                 var networkState = checkConnection();
                 /* load local files if there is not network connection */
                 if (networkState == Connection.NONE) {
@@ -74,6 +108,15 @@
                     //ref = window.open('next.html', '_self');                    
                 }
             }
+           
+            document.addEventListener('push-notification', function(event) {
+                var title = event.notification.title;
+                var userData = event.notification.userdata;
+             
+                console.warn('user data: ' + JSON.stringify(userData));
+                alert(title);
+            });
+
         </script>
     </head>
     <body onload="onLoad()">

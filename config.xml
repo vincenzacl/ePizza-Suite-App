@@ -24,6 +24,8 @@
     <dependency id="cordova-plugin-geolocation" />
     <dependency id="cordova-plugin-dialogs" />    
    
+   <access origin="*.pushwoosh.com" />
+   
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.SplashScreen" />
         <param name="ios-package" value="CDVSplashScreen" />
